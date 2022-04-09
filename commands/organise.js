@@ -17,6 +17,12 @@ function organise(srcPath){
         srcPath = process.cwd();
     }
 
+    //check if invalid  path is entered by user which doesn't exit
+    //if invalid path is entered
+    else if(!fs.existsSync(srcPath)){
+        console.log("invalid path entered.");
+    } 
+
     //step 2: created organised_file folder
     let organisedFiles = path.join(srcPath,"organised_files");
 
